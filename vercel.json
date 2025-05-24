@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "packages/trader/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "packages/trader/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/packages/trader/$1"
+    }
+  ]
+}
