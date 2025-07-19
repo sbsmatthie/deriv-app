@@ -1,3 +1,17 @@
 {
-    "routes": [{ "handle": "filesystem" }, { "src": "/(.*)", "dest": "/index.html" }]
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "buildCommand": "npm install && npm run build trader",
+  "outputDirectory": "packages/trader/dist",
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "packages/trader/dist/$1"
+    }
+  ]
 }
