@@ -1,7 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
 import { getKebabCase, getUrlBase } from '@deriv/shared';
-import * as icons_manifest from './icons-manifest';
+import icons_manifest from './icons-manifest'; // ✅ Changed from import * as
+
 import { TIconsManifest, TIconProps } from '../types';
 
 const Icon = React.forwardRef(
@@ -71,7 +72,6 @@ const Icon = React.forwardRef(
                         : undefined) as React.CSSProperties & { '--fill-color1': string }
                 }
             >
-                {/* SVG doesn't have an alt attribute, it uses a <desc> child tag instead. We need the <desc> tag for the screenreader */}
                 <desc>{description}</desc>
                 <use xlinkHref={`${getUrlBase(`/public/sprites/${filename}.svg`)}#${sprite_id}`} />
             </svg>
