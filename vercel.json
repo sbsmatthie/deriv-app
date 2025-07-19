@@ -6,12 +6,10 @@
       "use": "@vercel/static-build"
     }
   ],
-  "buildCommand": "npm install && npm run build trader",
-  "outputDirectory": "packages/trader/dist",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "packages/trader/dist/$1"
+      "dest": "/packages/trader/dist/$1"
     }
   ]
 }
